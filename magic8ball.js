@@ -1,4 +1,4 @@
-let question = " setup user input here"
+/*let question = " setup user input here"
 
 let magic = Math.floor(Math.random()*10);
 
@@ -23,3 +23,42 @@ if (magic === 0) {
 } else if (magic === 8) {
   console.log("sure why not");
 }
+*/
+
+
+function magic(){
+  const responses = [
+    "yes",
+    "maybe",
+    "ask again later", 
+    "why are you asking me",
+    "ugh you again", 
+    "im leaning yes", 
+    "im leaning no",
+    "idk flip a coinn",
+    "sure why not"
+
+  ];
+  
+  const magic = Math.floor(Math.random()*responses.length); 
+  return responses[magic];
+
+}
+
+document.getElementById("questionform").addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent the form from reloading the page
+  
+  const questionInput = document.getElementById("question");
+  const responseDiv = document.getElementById("response"); // Select the response container
+  
+  
+if (questionInput) {
+  const result = magic(); // Get a random response
+  responseDiv.textContent = result; // Display the response in the div
+  questionInput.value = "";
+} else {
+  console.error ("Input element with id = question not found")
+}
+  
+  
+});
