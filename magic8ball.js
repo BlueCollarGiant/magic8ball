@@ -50,15 +50,21 @@ document.getElementById("questionform").addEventListener("submit", (event) => {
   
   const questionInput = document.getElementById("question");
   const responseDiv = document.getElementById("response"); // Select the response container
+  const errorMessage = document.getElementById("error-message"); // Select the error message container
   
-  
-if (questionInput) {
-  const result = magic(); // Get a random response
-  responseDiv.textContent = result; // Display the response in the div
-  questionInput.value = "";
-} else {
-  console.error ("Input element with id = question not found")
-}
+  if (questionInput.value.trim() === "") {
+    
+    errorMessage.textContent = "Please ask a question before submitting!";
+    /* make error message red reminder */  
+    
+    
+  } else {
+    errorMessage.textContent = "";
+
+    const result = magic(); // Get a random response
+    responseDiv.textContent = result; // Display the response in the div
+    questionInput.value = "";
+  }
   
   
 });
