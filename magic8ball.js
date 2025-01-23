@@ -1,31 +1,3 @@
-/*let question = " setup user input here"
-
-let magic = Math.floor(Math.random()*10);
-
-console.log("What is your question? :" + question)
-
-if (magic === 0) {
-  console.log("yes");
-} else if (magic === 1) {
-  console.log("maybe");
-} else if (magic === 2) {
-  console.log("ask again later");
-} else if (magic === 3) {
-  console.log("why are you asking me");
-} else if (magic === 4) {
-  console.log("ugh you again");
-} else if (magic === 5) {
-  console.log("im leaning yes");
-} else if (magic === 6) {
-  console.log(" im leaning n");
-} else if (magic === 7) {
-  console.log("idk flip a coinn");
-} else if (magic === 8) {
-  console.log("sure why not");
-}
-*/
-
-
 function magic(){
   const responses = [
     "yes",
@@ -35,11 +7,11 @@ function magic(){
     "ugh you again", 
     "im leaning yes", 
     "im leaning no",
-    "idk flip a coinn",
+    "idk flip a coin",
     "sure why not"
 
   ];
-  
+  // self reminder i want to make the responses in another file so i can add or swap as i see fit 
   const magic = Math.floor(Math.random()*responses.length); 
   return responses[magic];
 
@@ -55,7 +27,7 @@ document.getElementById("questionform").addEventListener("submit", (event) => {
   if (questionInput.value.trim() === "") {
     
     errorMessage.textContent = "Please ask a question before submitting!";
-    /* make error message red reminder */  
+    //Reminder make error message red reminder  
     
     
   } else {
@@ -68,3 +40,15 @@ document.getElementById("questionform").addEventListener("submit", (event) => {
   
   
 });
+
+
+
+
+// current to do list:
+// 1. fix bug where output dosnt reset if you click the submit
+// again with an empty value. currently i would like it to reset the preveous answer
+// and only display the error log.
+
+// 2. take deep dive on suggested chat gpt fixes: remember if you dont understand it you arnt doing it yourself.
+// 3. start push for making answers interchangeable by adding seperate files with response answers.
+// 4. find artwork or purchase artwork for the site i wish to make it look good.
